@@ -5,8 +5,7 @@ RUN a2enmod rewrite
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 RUN apt-get update && apt-get install -y hugo
 
-COPY run-hugo.sh /bin/run-hugo.sh
-
+COPY php.ini $PHP_INI_DIR/php.ini
 
 # Define default command.
 #CMD ["/bin/bash"]
